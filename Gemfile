@@ -9,7 +9,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'sqlite3', '~> 1.4'
 
 gem 'simple_form'
-
+#gem to help w user management
+gem 'devise'
 
 
 
