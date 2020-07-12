@@ -7,10 +7,10 @@ class TweetsController < ApplicationController
 		@tweet = Tweet.new(tweet_params)
 		if @tweet.save
 			flash[:success] = "Your tweet was succesfully published!"
+			redirect_to new_tweet_path
 		else
-			p @tweet.errors.inspect
+			render 'new'
 		end
-		redirect_to new_tweet_path
 	
 	end
 	
