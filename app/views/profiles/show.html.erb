@@ -1,0 +1,15 @@
+This is the profile show page <br><br>
+
+
+First Name: <%= @profile.first_name %> <br>
+Last Name: <%= @profile.last_name %> <br>
+Age: <%= @profile.age %> <br>
+
+
+<% if @profile.user.tweets.any? %>
+	<ul class="list-group">
+		<% @profile.user.tweets.reverse.each do |tweet| %>
+			<li class="list-group-item"><%= tweet.content %></li>
+		<% end %>
+	</ul>
+<% end %>

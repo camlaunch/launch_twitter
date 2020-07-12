@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
  before_action :authenticate_user!
 
  def new
+ 	redirect_to profile_path(current_user.profile) if current_user.profile
  	@profile = Profile.new
  end
 
@@ -15,6 +16,9 @@ class ProfilesController < ApplicationController
    	render 'new'
    end
 end
+	def show
+	  @profile = Profile.find(params[:id])
+	end
 
  	def profile_params
    		params.require(:profile).permit(:first_name, :last_name, :age)
